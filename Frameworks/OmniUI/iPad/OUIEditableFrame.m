@@ -4954,6 +4954,12 @@ void OUITextLayoutDrawExtraRunBackgrounds(CGContextRef ctx, CTFrameRef drawnFram
     return result;
 }
 
+- (UITextRange *) textRangeForCharacterRange:(NSRange)characterRange
+{
+		return [[[OUEFTextRange alloc] initWithRange:characterRange generation:generation] autorelease];
+}
+
+
 #pragma mark OUIInspectorDelegate
 
 - (NSArray *)inspector:(OUIInspector *)inspector makeAvailableSlicesForStackedSlicesPane:(OUIStackedSlicesInspectorPane *)pane;
