@@ -211,6 +211,7 @@
 // If YES, an accessibilityElement will be created for each line. If NO, one accessibilityElement will be created that contains the entire text.
 @property (nonatomic, readwrite, assign) BOOL linesAreIndividuallyAccessible;
 
+- (UITextRange *) textRangeForSelectedParagraphs;
 
 //	Text Storage content mutation methods
 
