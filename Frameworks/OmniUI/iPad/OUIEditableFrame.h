@@ -211,6 +211,11 @@
 // If YES, an accessibilityElement will be created for each line. If NO, one accessibilityElement will be created that contains the entire text.
 @property (nonatomic, readwrite, assign) BOOL linesAreIndividuallyAccessible;
 
+//	Override to inject custom content thru UIKeyInput events
+- (NSAttributedString *) insertedAttributedStringForText:(NSString *)text;
+- (NSRange) rangeForDeletingBackwardWithRange:(NSRange)proposedRange;
+- (void) insertAttributedString:(NSAttributedString *)insertedString replacingRange:(NSRange)replacedRange withCaretIndex:(NSUInteger)finalCaretIndex;
+
 - (UITextRange *) textRangeForSelectedParagraphs;
 
 //	Text Storage content mutation methods
