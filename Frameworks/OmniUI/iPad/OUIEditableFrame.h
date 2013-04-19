@@ -210,6 +210,12 @@
 // If YES, an accessibilityElement will be created for each line. If NO, one accessibilityElement will be created that contains the entire text.
 @property (nonatomic, readwrite, assign) BOOL linesAreIndividuallyAccessible;
 
+
+//	Text Storage content mutation methods
+
+- (void) mutateContentTextWithBlock:(void(^)(NSMutableAttributedString *mutatedContent))aBlock;
+- (void) mutateContentTextNotifyingInputDelegate:(BOOL)notifyingInputDelegate notifyingTextStorage:(BOOL)notifyTextStorage mutatingAttributesOnly:(BOOL)onlyMutateAttributes withBlock:(void(^)(NSMutableAttributedString *mutatedContent))aBlock;
+
 @end
 
 extern NSString * const OUIEditableFrameTextDidBeginEditingNotification;
